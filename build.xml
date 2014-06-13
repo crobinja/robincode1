@@ -1,0 +1,19 @@
+<project name="PsMod" default="clean" basedir=".">
+
+ <target name="make" depends="clean">
+  <!-- Create the build directory structure used by compile -->
+  <mkdir dir="build"/>
+  <mkdir dir="build/classes"/>
+ </target>
+
+ <target name="clean">
+  <!-- Clean the previous directory structure -->
+  <delete dir="build/classes"/>
+  <delete dir="build"/>
+ </target>
+
+ <target name="compile" depends="make">
+  <javac srcdir="src" destdir="build/classes"/>
+ </target>
+
+</project>
